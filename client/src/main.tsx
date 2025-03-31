@@ -7,10 +7,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import { getJedi, getJediById, JediCards } from "./services/request";
 import HomePage from "./pages/HomePage";
 import Jedi from "./pages/Jedi";
 import Sith from "./pages/Sith";
+import { JediCards, getJedi, getJediById, getSith } from "./services/request";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/sith",
         element: <Sith />,
-        loader: JediCards,
+        loader: getSith,
       },
     ],
   },
