@@ -25,5 +25,13 @@ const getJedi = () => {
       console.error(error);
     });
 };
+const getSith = () => {
+  return axios
+    .get(`${API}/api/person/Sith`)
+    .then((response) => response.data)
+    .catch((error) => {
+      console.error(error);
+    });
+};
 
-export { JediCards, getJediById, getJedi };
+export { JediCards, getJediById, getJedi, getSith };

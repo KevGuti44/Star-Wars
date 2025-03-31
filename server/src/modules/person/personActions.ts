@@ -104,4 +104,12 @@ const getPowerJedi: RequestHandler = async (req, res, next) => {
     next(error);
   }
 };
-export default { browse, read, add, edit, destroy, getPowerJedi };
+const getPowerSith: RequestHandler = async (req, res, next) => {
+  try {
+    const powerSith = await personRepository.readByPower("Sith");
+    res.json(powerSith);
+  } catch (error) {
+    next(error);
+  }
+};
+export default { browse, read, add, edit, destroy, getPowerJedi, getPowerSith };
