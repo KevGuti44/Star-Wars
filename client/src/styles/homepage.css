@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+}
+
+.power-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.the-jedi {
+  max-width: 8rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.the-sith {
+  max-width: 8rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+}

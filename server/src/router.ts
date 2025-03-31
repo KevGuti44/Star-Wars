@@ -7,11 +7,22 @@ const router = express.Router();
 /* ************************************************************************* */
 
 // Define item-related routes
-import itemActions from "./modules/item/itemActions";
 
-router.get("/api/items", itemActions.browse);
-router.get("/api/items/:id", itemActions.read);
-router.post("/api/items", itemActions.add);
+import personActions from "./modules/person/personActions";
+import weaponActions from "./modules/weapon/weaponActions";
+
+router.get("/api/person", personActions.browse);
+router.get("/api/person/Jedi", personActions.getPowerJedi);
+router.get("/api/person/:id", personActions.read);
+router.put("/api/person/:id", personActions.edit);
+router.post("/api/person", personActions.add);
+router.delete("/api/person", personActions.destroy);
+
+router.get("/api/weapon", weaponActions.browse);
+router.get("/api/weapon/:id", weaponActions.read);
+router.put("/api/weapon/:id", weaponActions.edit);
+router.post("/api/weapon", weaponActions.add);
+router.delete("/api/weapon", weaponActions.destroy);
 
 /* ************************************************************************* */
 
