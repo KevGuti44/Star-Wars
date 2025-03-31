@@ -5,7 +5,7 @@ import { useLoaderData, useRevalidator } from "react-router-dom";
 import { editJedi } from "../services/request";
 
 export default function EditDashboard() {
-  const { jedis } = useLoaderData() as { jedis: JediTypes[] };
+  const jedis = useLoaderData() as JediTypes[];
   const { revalidate } = useRevalidator();
   const API = import.meta.env.VITE_API_URL;
   const [jediToDelete, setJediToDelete] = useState<JediTypes | null>(null);
