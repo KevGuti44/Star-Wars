@@ -35,9 +35,7 @@ const getSith = () => {
 };
 const editJedi = async (id: number, updatedJedi: JediTypes) => {
   try {
-    const response = await axios.put(`${API}/api/person/${id}`, updatedJedi, {
-      withCredentials: true,
-    });
+    const response = await axios.put(`${API}/api/person/${id}`, updatedJedi);
     return response;
   } catch (error) {
     console.error("Erreur lors de la mise à jour du Jedi :", error);
