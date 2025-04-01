@@ -19,9 +19,7 @@ export default function EditDashboard() {
 
   const deleteJedi = (id: number) => {
     return axios
-      .delete(`${API}/api/person/${id}`, {
-        withCredentials: true,
-      })
+      .delete(`${API}/api/person/${id}`)
       .then(() => {
         revalidate();
         setJediToDelete(null);
