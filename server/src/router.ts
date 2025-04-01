@@ -15,8 +15,11 @@ router.get("/api/person", personActions.browse);
 router.get("/api/person/Jedi", personActions.getPowerJedi);
 router.get("/api/person/Sith", personActions.getPowerSith);
 router.get("/api/person/:id", personActions.read);
+
 router.put("/api/person/:id", personActions.edit);
+
 router.post("/api/person", personActions.add);
+
 router.delete("/api/person", personActions.destroy);
 
 router.get("/api/weapon", weaponActions.browse);
