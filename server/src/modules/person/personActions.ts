@@ -40,7 +40,7 @@ const edit: RequestHandler = async (req, res, next) => {
   try {
     // Update a specific category based on the provided ID
     const person = {
-      id: req.body.id,
+      id: Number(req.params.id),
       name: req.body.name,
       age: req.body.age,
       description: req.body.description,

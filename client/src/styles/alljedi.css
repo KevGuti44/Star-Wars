@@ -1,0 +1,12 @@
+.cards-jedi > img {
+  width: 10rem;
+  height: 16rem;
+}
+
+.cards-jedi {
+  display: flex;
+  flex-direction: column;
+  border: solid black;
+  width: 12rem;
+  height: 100%;
+}

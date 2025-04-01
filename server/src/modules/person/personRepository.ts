@@ -18,7 +18,7 @@ class PersonRepository {
   async create(person: Omit<Person, "id">) {
     // Execute the SQL INSERT query to add a new item to the "item" table
     const [result] = await databaseClient.query<Result>(
-      "insert into item (title, user_id) values (?, ?)",
+      "insert into person (name, age, description, img, power) values (?, ?, ?, ?, ?)",
       [person.name, person.age, person.description, person.img, person.power],
     );
 
@@ -49,8 +49,15 @@ class PersonRepository {
   async update(person: Person) {
     // Execute the SQL UPDATE query to update an existing category in the "category" table
     const [result] = await databaseClient.query<Result>(
-      "update person set name = ?, age= ?, description = ?, img = ?, power = ? where id = ?",
-      [],
+      "update person set name = ?, age = ?, description = ?, img = ?, power = ? where id = ?",
+      [
+        person.name,
+        person.age,
+        person.description,
+        person.img,
+        person.power,
+        person.id,
+      ],
     );
 
     // Return how many rows were affected

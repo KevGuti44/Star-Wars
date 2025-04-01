@@ -1,7 +1,8 @@
+import "../styles/alljedi.css";
 export default function AllJedi({ jedi }: JediProps) {
   return (
     <>
-      <div>
+      <div className="cards-jedi">
         <p>{jedi.name}</p>
         <p>{jedi.age}</p>
         <p>{jedi.description}</p>

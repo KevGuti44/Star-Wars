@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import Dashboard from "./pages/Dashboard";
 import HomePage from "./pages/HomePage";
 import Jedi from "./pages/Jedi";
 import Sith from "./pages/Sith";
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
         path: "/sith",
         element: <Sith />,
         loader: getSith,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+        loader: JediCards,
       },
     ],
   },
