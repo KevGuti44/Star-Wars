@@ -66,7 +66,6 @@ const edit: RequestHandler = async (req, res, next) => {
 
 // The A of BREAD - Add (Create) operation
 const add: RequestHandler = async (req, res, next) => {
-  console.info("dans add", req.body);
   try {
     // Extract the item data from the request body
     const newPerson = {

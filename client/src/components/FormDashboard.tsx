@@ -15,9 +15,7 @@ export default function FormDashboard() {
   const sendForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .post(`${API}/api/person/`, newJedi, {
-        withCredentials: true,
-      })
+      .post(`${API}/api/person/`, newJedi)
       .then((response) => {
         if (response.status === 201) {
         } else {
