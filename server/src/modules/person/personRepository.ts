@@ -49,8 +49,15 @@ class PersonRepository {
   async update(person: Person) {
     // Execute the SQL UPDATE query to update an existing category in the "category" table
     const [result] = await databaseClient.query<Result>(
-      "update person set name = ?, age= ?, description = ?, img = ?, power = ? where id = ?",
-      [person.name, person.age, person.description, person.img, person.power],
+      "update person set name = ?, age = ?, description = ?, img = ?, power = ? where id = ?",
+      [
+        person.name,
+        person.age,
+        person.description,
+        person.img,
+        person.power,
+        person.id,
+      ],
     );
 
     // Return how many rows were affected
