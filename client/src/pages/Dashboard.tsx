@@ -1,6 +1,6 @@
 import { useState } from "react";
 import EditDashboard from "../components/EditDashboard";
-// import FormDashBoard from "../components/FormDashBoard";
+import FormDashboard from "../components/FormDashboard";
 import MainDashboard from "../components/MainDashboard";
 // import UserDashBoard from "../components/UserDashboard";
 // import "../styles/dashboard.css";
@@ -28,8 +28,8 @@ export default function Dashboard() {
       </section>
       <section className="dashboard-right">
         {activeComponent === "dashboard" && <MainDashboard />}
-        {/* {activeComponent === "form" && <FormDashBoard />}
-        {activeComponent === "users" && <UserDashBoard />} */}
+        {activeComponent === "form" && <FormDashboard />}
+        {/* {activeComponent === "users" && <UserDashBoard />} */}
         {activeComponent === "edit" && <EditDashboard />}
       </section>
     </>

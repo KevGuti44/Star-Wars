@@ -167,7 +167,7 @@ export default function EditDashboard() {
         >
           {updatedJedi && (
             <form onSubmit={handleEditJedi} className="form-dashboard">
-              <p>Titre</p>
+              <p>Nom du personnage</p>
               <input
                 type="text"
                 value={updatedJedi.name}
@@ -175,16 +175,16 @@ export default function EditDashboard() {
                 placeholder="Nom du Jedi"
                 onChange={handleChangeJediForm}
               />
-              <p>Affiche</p>
+              <p>Age</p>
               <input
-                type="text"
+                type="number"
                 value={updatedJedi.age}
                 name="age"
                 id=""
                 placeholder="Age"
                 onChange={handleChangeJediForm}
               />
-              <p>Genre</p>
+              <p>Description</p>
               <input
                 type="text"
                 value={updatedJedi.description}
@@ -192,7 +192,7 @@ export default function EditDashboard() {
                 placeholder="Description"
                 onChange={handleChangeJediForm}
               />
-              <p>Date de sortie</p>
+              <p>Image</p>
               <input
                 type="text"
                 id="release_year"
@@ -201,7 +201,7 @@ export default function EditDashboard() {
                 placeholder="URL image"
                 onChange={handleChangeJediForm}
               />
-              <p>Synopsis</p>
+              <p>Pouvoir</p>
               <input
                 type="text"
                 value={updatedJedi.power}
