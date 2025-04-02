@@ -1,0 +1,10 @@
+.nav_container {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+  }
+}
