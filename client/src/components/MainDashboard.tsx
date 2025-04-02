@@ -8,8 +8,9 @@ export default function MainDashboard() {
     <>
       {jedis.map((jedi) => (
         <div className="dashboard-jedi" key={jedi.id}>
-          <img src={jedi.img} alt="" />
+          <img src={jedi.img} alt="personnage de star wars" />
           <p>{jedi.name}</p>
+          <p>{jedi.power}</p>
         </div>
       ))}
     </>
