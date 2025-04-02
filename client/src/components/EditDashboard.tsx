@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useLoaderData, useRevalidator } from "react-router-dom";
-// import "../styles/editdashboard.css";
+import "../styles/editdashboard.css";
 import { editJedi } from "../services/request";
 
 export default function EditDashboard() {
@@ -86,11 +86,17 @@ export default function EditDashboard() {
             <p>{jedi.name}</p>
           </div>
           <div className="button-edit">
-            <button type="button" onClick={() => openDeleteModal(jedi)}>
-              <img src="/GarbageIcone.png" alt="Delete" />
-            </button>
             <button type="button" onClick={() => openModal(jedi)}>
-              <img src="/EditIcone.png" alt="Edit" />
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/32/32355.png"
+                alt="Edit"
+              />
+            </button>
+            <button type="button" onClick={() => openDeleteModal(jedi)}>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgy6cH4pk8uBtQ-_MBHx5MtDO8ms62KxR0UQ&s"
+                alt="Delete"
+              />
             </button>
           </div>
         </section>

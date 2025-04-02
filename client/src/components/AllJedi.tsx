@@ -4,7 +4,7 @@ export default function AllJedi({ jedi }: JediProps) {
     <>
       <div className="cards-jedi">
         <p>{jedi.name}</p>
-        <p>{jedi.age}</p>
+        <p>Age: {jedi.age} ans</p>
         <p>{jedi.description}</p>
         <p>{jedi.power}</p>
         <img src={jedi.img} alt={jedi.name} />

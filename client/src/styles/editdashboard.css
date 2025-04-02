@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap");
+
+:root {
+  --jedi-blue: #4facfe;
+  --sith-red: #ff2d55;
+  --sw-yellow: #ffe81f;
+  --dark-bg: #121212;
+  --panel-bg: rgba(20, 20, 30, 0.85);
+  --border-glow: rgba(255, 232, 31, 0.3);
+}
+
+body {
+  font-family: "Pathway Gothic One", sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--sw-yellow);
+}
+
+.list-jedi {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--dark-bg);
+}
+
+.jedi-edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--panel-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.dashboard-jedilist {
+  flex: 1;
+}
+
+.dashboard-jedilist p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.button-edit {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button-edit button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.button-edit img {
+  width: 24px;
+  height: 24px;
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(320deg); /* Pour donner un effet rouge aux icônes */
+}
+
+dialog {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  background-color: var(--panel-bg);
+  color: var(--sw-yellow);
+}
+
+.modal-content {
+  padding: 2rem;
+}
+
+.confirmation-modal .modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.confirmation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.confirm-button,
+.cancel-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.confirm-button {
+  background-color: var(--sith-red);
+  color: var(--sw-yellow);
+}
+
+.cancel-button {
+  background-color: var(--jedi-blue);
+  color: var(--dark-bg);
+}
+
+.modal .modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal .modal-content p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal .modal-content input {
+  padding: 0.5rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: var(--sw-yellow);
+}
+
+.modify-form,
+.close-modal {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modify-form {
+  background-color: var(--jedi-blue);
+  color: var(--dark-bg);
+}
+
+.close-modal {
+  background-color: var(--sith-red);
+  color: var(--sw-yellow);
+}
+
+/* Ajout d'une bordure lumineuse pour un effet futuriste */
+.jedi-edit::before,
+dialog::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--border-glow);
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0.5;
+}
