@@ -1,10 +1,153 @@
+/* Styles pour la barre de navigation Star Wars positionnée en haut */
+@import url("https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap");
+
+:root {
+  --sw-yellow: #ffe81f;
+  --jedi-blue: #4facfe;
+  --sith-red: #ff2d55;
+  --dark-bg: rgba(0, 0, 0, 0.85);
+  --border-glow: rgba(255, 232, 31, 0.3);
+}
+
 .nav_container {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  a {
-    text-decoration: none;
-    list-style: none;
-    color: black;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-bg);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--border-glow);
+  font-family: "Pathway Gothic One", sans-serif;
+}
+
+.nav_container::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--sw-yellow),
+    transparent
+  );
+}
+
+.nav_container a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.nav_container a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--sw-yellow);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px var(--sw-yellow);
+}
+
+.nav_container a:hover {
+  color: var(--sw-yellow);
+  text-shadow: 0 0 8px rgba(255, 232, 31, 0.7);
+}
+
+.nav_container a:hover::after {
+  width: 70%;
+}
+
+/* Styles pour le lien actif */
+.nav_container a.active {
+  color: var(--sw-yellow);
+  font-weight: bold;
+}
+
+.nav_container a.active::after {
+  width: 70%;
+}
+
+/* Styles personnalisés pour chaque lien */
+.nav_container a:nth-child(1):hover {
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.nav_container a:nth-child(3):hover {
+  color: var(--jedi-blue);
+  text-shadow: 0 0 8px rgba(79, 172, 254, 0.7);
+}
+
+.nav_container a:nth-child(3):hover::after {
+  background-color: var(--jedi-blue);
+  box-shadow: 0 0 8px var(--jedi-blue);
+}
+
+.nav_container a:nth-child(4):hover {
+  color: var(--sith-red);
+  text-shadow: 0 0 8px rgba(255, 45, 85, 0.7);
+}
+
+.nav_container a:nth-child(4):hover::after {
+  background-color: var(--sith-red);
+  box-shadow: 0 0 8px var(--sith-red);
+}
+
+/* CSS pour assurer que la navbar est bien en haut */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin-top: 0;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+  .nav_container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .nav_container a {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav_container {
+    padding: 10px;
+  }
+
+  .nav_container a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    margin: 3px 5px;
   }
 }

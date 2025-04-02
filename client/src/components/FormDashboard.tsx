@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-// import "../styles/formdashboard.css";
+import "../styles/formdashboard.css";
 
 export default function FormDashboard() {
   const [newJedi, setNewJedi] = useState({

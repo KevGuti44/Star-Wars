@@ -1,10 +1,22 @@
-h1 {
+/* h1 {
   text-align: center;
+  color: rgb(227, 227, 5);
+  font-size: 4rem;
+}
+.bloc-description {
+  color: white;
+  padding: 4rem;
 }
 
 .power-container {
   display: flex;
   justify-content: space-around;
+  a {
+    list-style: none;
+    text-decoration: none;
+    margin-top: 2rem;
+    color: white;
+  }
 }
 
 .the-jedi {
@@ -19,4 +31,187 @@ h1 {
   height: 8rem;
   display: flex;
   flex-direction: column;
+}
+
+.bc-container {
+  height: 100%;
+  background-image: url("https://www.livreshebdo.fr/sites/default/files/assets/images/starwars.jpg");
+  background-size: cover;
+  background-position: center;
+} */
+
+/* CSS pour la page d'accueil Star Wars */
+@import url("https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #ffe81f;
+  font-family: "Pathway Gothic One", sans-serif;
+  overflow-x: hidden;
+}
+
+.bc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.big-title {
+  font-size: 4.5rem;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 232, 31, 0.7);
+  color: #ffe81f;
+  text-transform: uppercase;
+  position: relative;
+  animation: title-glow 3s infinite alternate;
+}
+
+@keyframes title-glow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 232, 31, 0.7);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255, 232, 31, 1);
+  }
+}
+
+.bloc-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ccc;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 232, 31, 0.3);
+}
+
+.power-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.first-container,
+.second-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.first-container {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 100, 255, 0.3)
+  );
+  border: 2px solid rgba(100, 149, 237, 0.6);
+}
+
+.second-container {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(255, 0, 0, 0.3)
+  );
+  border: 2px solid rgba(220, 20, 60, 0.6);
+}
+
+.first-container:hover,
+.second-container:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.first-container:hover {
+  box-shadow: 0 0 30px rgba(100, 149, 237, 0.8);
+}
+
+.second-container:hover {
+  box-shadow: 0 0 30px rgba(220, 20, 60, 0.8);
+}
+
+.first-container a,
+.second-container a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+  height: 100%;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.the-jedi,
+.the-sith {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: transform 0.6s ease;
+  filter: brightness(0.9);
+}
+
+.first-container:hover .the-jedi {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.second-container:hover .the-sith {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+.first-container a::after {
+  content: "Paix et Sérénité";
+  font-size: 1rem;
+  color: #8ab4f8;
+  margin-top: 10px;
+}
+
+.second-container a::after {
+  content: "Pouvoir et Passion";
+  font-size: 1rem;
+  color: #ff6b6b;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .power-container {
+    flex-direction: column;
+  }
+
+  .big-title {
+    font-size: 3rem;
+  }
+
+  .bloc-description {
+    font-size: 1rem;
+    padding: 15px;
+  }
 }

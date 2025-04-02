@@ -2,6 +2,7 @@ import { useState } from "react";
 import EditDashboard from "../components/EditDashboard";
 import FormDashboard from "../components/FormDashboard";
 import MainDashboard from "../components/MainDashboard";
+import "../styles/dashboard.css";
 
 export default function Dashboard() {
   const [activeComponent, setActiveComponent] = useState("dashboard");
@@ -17,7 +18,7 @@ export default function Dashboard() {
             Ajouter un Personnage
           </button>
           <button type="button" onClick={() => setActiveComponent("edit")}>
-            Modifier un Personnage
+            Modifier ou Supprimer un Personnage
           </button>
         </div>
       </section>
